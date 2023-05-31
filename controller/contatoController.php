@@ -18,6 +18,10 @@ if ($funcao == 'cadastroMedico') {
     efetuarCadastroMedico();
 }
 
+if ($funcao == 'verificarDisponibilidade') {
+    vericiarDisponibilidade();
+}
+
 function efetuarCadastroUsuario()
 {
     include_once "../model/GerenciadorUsuario.php";
@@ -119,7 +123,7 @@ function efetuarCadastroMedico()
             $msgErro = ['erro' => true, 'msg' => 'CPF já cadastrado em USUARIOS!!', 'cor' => 'alert-danger'];
             // $msgErro = ['erro' => true, 'msg' => 'CPF e CRM já cadastrados nas respectivas tabelas!!', 'cor' => 'alert-danger'];
         }
-    
+
         echo json_encode($msgErro);
         exit();
     }
@@ -132,7 +136,7 @@ function efetuarCadastroMedico()
         //Crando um registro de Medico
         $resposta = $gerenciadorMedico->cadastrarMedico($dadosMedico);
         if (!$resposta['erro']) { //NAO houve erros ao cadastrar o medico
-            
+
             echo json_encode($resposta);
             exit();
         }
@@ -140,5 +144,30 @@ function efetuarCadastroMedico()
 
     $erroCadsatro = $resposta;
     echo json_encode($erroCadsatro);
+    exit();
+}
+
+function vericiarDisponibilidade()
+{
+
+    include_once "../model/GerenciadorMedico.php";
+
+    $dadosRecebidos = $_POST;
+
+    //Construindo dados
+    $agendamento = array(
+        'crm' => 7070,
+        'diaSemana' => $dadosRecebidos['diaSemana'],
+        'horario' => $dadosRecebidos['horario'],
+    );
+
+    $verificaHorario = new GerenciadorMedico();
+
+    //construindo ainda
+    // $resposta = $verificaHorario->existeHorario($agendamento);
+
+
+
+    echo json_encode($agendamento);
     exit();
 }

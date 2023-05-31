@@ -44,7 +44,7 @@ session_start();
                             <label for="password">Senha:</label>
                             <input type="password" class="form-control" name="senha" id="password" placeholder="Digite sua senha">
                         </div>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <button type="submit" class="btn btn-primary">Cadastrar Paciente</button>
                         <span class="text-danger" id="alertaErro"></span>
                         <div id="mensagem" class="alert" style="display: none;"></div>
                     </form>

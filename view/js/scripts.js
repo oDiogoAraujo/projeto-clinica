@@ -121,7 +121,7 @@ const enviarDadosUsuario = async (parametros) => {
 //Mensagem vem direto do PHP, já atribuido o erro e a cor
 const inserirMensagemStatus = (resposta) => {
     //Selecionando o elemento no HTML
-    let mensagemDiv = document.getElementById('mensagem')
+    const mensagemDiv = document.getElementById('mensagem')
 
     //Deixando ele Visivel
     mensagemDiv.style.display = 'block'
