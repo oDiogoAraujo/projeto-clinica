@@ -1,0 +1,21 @@
+/* login */
+.login-container {
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .login-container .form-group {
+    margin-bottom: 20px;
+  }
+  .login-container .form-group label {
+    font-weight: bold;
+  }
+  .login-container .btn {
+    width: 100%;
+  }
